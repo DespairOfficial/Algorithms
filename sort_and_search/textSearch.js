@@ -82,3 +82,40 @@ let toFind = 'abcabd'
 let text = 'abcabeabcabcabd'
 
 // KMP(toFind,text)
+
+toFind = 'abcabd'
+text = 'abcafdfabcabd'
+
+function BM(word,text){
+    let k = 0 // beggining of the word
+    let xi = 0 // x's iterator
+    console.log(text)
+    console.log(word+'\n')
+    while(true){
+        x = ''
+        for(let i =0; i<= word.length; i++ ){
+            if(i==word.length){
+                return k
+            }
+            if(word[word.length-1-i]!=text[k + word.length-1-i]){
+                x = text[k + word.length-1-i]
+                xi = k + word.length-1-i
+                break
+            }
+
+        }
+        if(word.indexOf(x)==-1){
+            k = xi+1
+            console.log(text)
+            console.log(' '.repeat(k) +word+  '\n')
+        }
+        else{
+            k = xi - word.lastIndexOf(x) 
+            console.log(text)
+            console.log(' '.repeat(k) +word+  '\n')
+        }
+    }
+    
+}
+
+console.log(BM(toFind,text))
