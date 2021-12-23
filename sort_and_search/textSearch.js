@@ -81,7 +81,7 @@ function KMP(word,text) {
 let toFind = 'abcabd'
 let text = 'abcabeabcabcabd'
 
-// KMP(toFind,text)
+KMP(toFind,text)
 
 toFind = 'abcabd'
 text = 'abcafdfabcabd'
@@ -118,4 +118,4 @@ function BM(word,text){
     
 }
 
-console.log(BM(toFind,text))
+// console.log(BM(toFind,text))
